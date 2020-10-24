@@ -1,0 +1,176 @@
+.card {
+  background-color: white;
+  width: 85%;
+  margin: auto;
+  border-radius: 10px;
+  padding-bottom: 2em;
+  position: relative;
+  &__firstImage{
+    position: absolute;
+    top: -7em;
+    // left: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    left: -1.5em;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+  }
+  &__secondImage {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 0;
+  }
+  &__title {
+    font-family: 'Kumbh Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5em;
+    padding-bottom: .5em;
+    font-size: 1.6em;
+  }
+  &__box-desktop {
+    display: none;
+  }
+}
+
+
+.question-box {
+  margin:0em 2em;
+  padding: 1.5em 0em 1em;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  color: hsl(240, 6%, 50%);
+  border-bottom: 1px solid hsl(240, 23%, 91%) ;
+  &__list {
+    &--question {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      &:hover {
+        color: hsl(14, 88%, 65%);
+      }
+    }
+    &--response {
+      padding-top: 1em;
+      font-weight: lighter;
+      color: hsl(240, 6%, 50%);
+    }
+  }
+}
+
+
+.arrow {
+  color: hsl(14, 88%, 65%);
+  font-weight: bold;
+  transform: rotate(90deg);
+  font-family: 'Kumbh Sans', sans-serif;
+  transition: transform 1s;
+  &__validate {
+    transform: rotate(270deg);
+    color: hsl(14, 88%, 65%);
+    font-weight: bold;
+    transition: transform 1s;
+  }
+}
+
+.active {
+  font-weight: bold;
+  color: hsl(238, 29%, 16%);
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    background-image: url('../../assets/images/illustration-woman-online-desktop.svg'), url('../../assets/images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 22em, 22em;
+    background-position: left -1em top 12em,left -1em top 10em;
+    background-attachment: fixed;
+    &__firstImage{
+     display: none;
+    }
+    &__secondImage {
+      display: none;
+    }
+    &__title {
+      padding-top: 1em;
+    }
+    &__box-desktop {
+      display: block;
+      position: absolute;
+      width: 8em;
+      left: -5em;
+      top: 9em;
+    }
+  }
+  .question-box {
+    width: 50%;
+    margin-left: 45%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .card {
+    background-size: 22em, 22em;
+    background-position: left 8em top 8em,left 8em top 6em;
+    width: 40em;
+    background-attachment: fixed;
+    &__box-desktop {
+      width: 15%;
+      top: 9.5em;
+      left: -3.5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .card {
+    background-size: 26em, 26em;
+    background-position: left 14em top 8em,left 13em top 5em;
+    background-attachment: fixed;
+    width: 50em;
+    &__box-desktop {
+      width: 16%;
+      top: 7.5em;
+      left: -5.5em;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 2560px) {
+  .card {
+    background-size: 21%,50%;
+    background-position: left 22% top 14%,left -24% top -72%;
+    width: 60%;
+    background-attachment: fixed;
+    &__box-desktop {
+      width: 14%;
+      top: 5.5em;
+      left: -6em;
+    }
+  }
+}
